@@ -1,0 +1,63 @@
+{
+  "name": "sukhraj-website",
+  "version": "1.0.0",
+  "description": "repo for my personal site",
+  "main": "index.js",
+  "scripts": {
+    "build:autoprefix": "postcss docs/css/main.css -u autoprefixer -r",
+    "build:css": "node-sass --output-style compressed src/sass/main.scss docs/css/main.css",
+    "build:css:dev": "node-sass --output-style compact --source-map true src/sass/main.scss docs/css/main.css",
+    "build": "npm run build:css && npm run build:autoprefix",
+    "watch:sass": "onchange './src/sass/**/*.scss' -- npm run build:css:dev && npm run build:autoprefix",
+    "serve": "browser-sync start --server ./docs -w --files \"./docs/index.html\" \"./docs/css/main.css\" \"./docs/js/script.js\"",
+    "watch": "npm run build && npm run serve & npm run watch:sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sukhrajghuman/sukhraj-website.git"
+  },
+  "keywords": [],
+  "author": "raj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sukhrajghuman/sukhraj-website/issues"
+  },
+  "homepage": "https://github.com/sukhrajghuman/sukhraj-website#readme",
+  "pancake": {
+    "auto-save": true,
+    "plugins": true,
+    "ignore": [
+      "@gov.au/pancake-react",
+      "@gov.au/pancake-json"
+    ],
+    "sass": {
+      "modules": false,
+      "location": "src/sass/",
+      "name": "auds.scss"
+    },
+    "css": {
+      "minified": true,
+      "modules": false,
+      "browsers": [
+        "last 2 versions",
+        "ie 8",
+        "ie 9",
+        "ie 10"
+      ],
+      "location": false,
+      "name": false
+    }
+  },
+  "dependencies": {
+    "@gov.au/body": "^2.0.13",
+    "@gov.au/core": "^3.1.2",
+    "@gov.au/grid-12": "^2.0.9",
+    "@gov.au/responsive-media": "^2.0.13",
+    "autoprefixer": "^9.4.6",
+    "node-sass": "^4.11.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "onchange": "^5.2.0"
+  }
+}
