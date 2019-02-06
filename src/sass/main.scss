@@ -13,10 +13,28 @@ header {
 }
 
 main {
-    margin-top: 3rem;
+    margin-top: 1.5rem;
+    
+    @include AU-media( sm ) {
+        @include AU-space( margin-top, 3unit );
+    }
 }
 
-h1::before,
+h1 {
+    margin-top: 0;
+}
+
+h1::before {
+    @media screen and ( min-width: 431px ) {
+        display: inline-block;
+        content: "";
+        border-top: .15rem solid black;
+        width: 4rem;
+        margin: 0 .5rem;
+        transform: translateY(-.5rem);
+    }
+}
+
 h1::after {
     display: inline-block;
     content: "";
@@ -32,7 +50,8 @@ h1::after {
 
 .au-responsive-media-img {
     border-radius: $AU-border-radius;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+    transition: 0.3s;
 }
 
 .icon {
@@ -48,4 +67,20 @@ h1::after {
 footer {
     margin-top: 3rem;
     text-align: center
+}
+
+div[ class^="col-sm" ] + div[ class^="col-sm" ] {
+    @include AU-space( margin-top, 1.5unit );
+
+    @include AU-media( sm ) {
+        margin-top:0;        
+    }
+}
+
+div[ class^="col-md" ] + div[ class^="col-md" ] {
+    @include AU-space( margin-top, 1.5unit );
+
+    @include AU-media( md ) {
+        margin-top:0;        
+    }
 }
