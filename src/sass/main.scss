@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    .au-link-list {
+    a {
         float: left;
     }
 }
@@ -52,6 +52,10 @@ h1::after {
     border-radius: $AU-border-radius;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
     transition: 0.3s;
+
+    &:hover {
+        box-shadow: 0 4px 16px 0 rgba(0,0,0,0.5);
+    }
 }
 
 .icon {
@@ -83,4 +87,8 @@ div[ class^="col-md" ] + div[ class^="col-md" ] {
     @include AU-media( md ) {
         margin-top:0;        
     }
+}
+
+div[ class^="row" ] + div[ class^="row" ] {
+    @include AU-space( margin-top, 1.5unit );      
 }
