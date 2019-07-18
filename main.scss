@@ -1,0 +1,91 @@
+@import 'reset';
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.5;
+}
+
+
+
+.main-nav {
+    padding: 2rem 4rem;
+    background: transparent;
+    position: fixed;
+    color: white;
+    font-weight: bold;
+    display: flex;
+
+    i {
+        font-size: 2rem;
+        color: white;    
+    }
+
+    &__brand {
+        color: white;
+        justify-content: flex-start;
+    }
+
+    &__social {
+        justify-content: flex-end;
+    }
+
+
+
+
+    &__social-list {
+    margin: 0;
+    padding: 0;
+
+    li {
+        display: inline-block;
+        + li {
+            margin-left: 1rem;
+        }
+    }
+}
+}
+
+.main-header {
+    background-image: url('images/cbr-lake.jpg');
+    height: 85vh;
+    background-size: cover;
+    background-position: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    &__tagline {
+        background-color: rgba(0,0,0,.2);
+        padding: 1rem;
+        color: white;
+        border-radius: 6px;
+
+        h1 {
+            font-size: 3rem;
+        }
+        
+        p {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.content {
+    border-radius: 4px;
+    margin: -4rem 2rem;
+    background: white;
+    padding: 3rem 6rem;
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12), 0 8px 10px -5px rgba(0,0,0,.2);
+    margin-bottom: 3rem;
+}
+
+.icon {
+    height: 4rem;
+    width: 4rem;
+
+    &:hover {
+        transform: scale( 1.2 );
+        transition: 0.2s;
+    }
+}

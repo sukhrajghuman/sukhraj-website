@@ -1,0 +1,101 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.5; }
+
+.main-nav {
+  padding: 2rem 4rem;
+  background: transparent;
+  position: fixed;
+  color: white;
+  font-weight: bold;
+  display: flex; }
+  .main-nav i {
+    font-size: 2rem;
+    color: white; }
+  .main-nav__brand {
+    color: white;
+    justify-content: flex-start; }
+  .main-nav__social {
+    justify-content: flex-end; }
+  .main-nav__social-list {
+    margin: 0;
+    padding: 0; }
+    .main-nav__social-list li {
+      display: inline-block; }
+      .main-nav__social-list li + li {
+        margin-left: 1rem; }
+
+.main-header {
+  background-image: url("images/cbr-lake.jpg");
+  height: 85vh;
+  background-size: cover;
+  background-position: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+  .main-header__tagline {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    color: white;
+    border-radius: 6px; }
+    .main-header__tagline h1 {
+      font-size: 3rem; }
+    .main-header__tagline p {
+      font-size: 1.5rem; }
+
+.content {
+  border-radius: 4px;
+  margin: -4rem 2rem;
+  background: white;
+  padding: 3rem 6rem;
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 3rem; }
+
+.icon {
+  height: 4rem;
+  width: 4rem; }
+  .icon:hover {
+    transform: scale(1.2);
+    transition: 0.2s; }
