@@ -1,8 +1,21 @@
-@import 'reset';
+@import 'reset.scss';
+@import 'auds.scss';
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     line-height: 1.5;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+a:focus {
+    outline: 3px solid rebeccapurple;
+    outline-offset: 1px;
 }
 
 .container {
@@ -32,45 +45,9 @@ body {
 
 }
 
-
-.main-nav {
-    padding: 2rem 4rem;
-    background: transparent;
-    position: fixed;
-    color: white;
-    font-weight: bold;
-    left:0;
-    right: 0;
-
-
-    i {
-        font-size: 2rem;
-        color: white;    
-    }
-
-    &__brand {
-        color: white;
-    }
-
-    &__social {
-        justify-content: flex-end;        
-    }
-
-    &__social-list {
-        margin: 0;
-        padding: 0;
-        li {
-            display: inline-block;
-            + li {
-                    margin-left: 1rem;
-                }
-            }
-        }
-}
-
-.main-header {
+.header {
     background-image: url('images/cbr-lake.jpg');
-    height: 85vh;
+    height: 60vh;
     background-size: cover;
     background-position: 50%;
     display: flex;
@@ -79,40 +56,106 @@ body {
     text-align: center;
 
     &__tagline {
-        background-color: rgba(0,0,0,.2);
+        background-color: rgba(0,0,0,.5);
         padding: 1rem;
         color: white;
         border-radius: 6px;
 
         h1 {
-            font-size: 3rem;
+            @include AU-space( font-size, 3unit );
         }
         
         p {
-            font-size: 1.5rem;
+            @include AU-space( font-size, 1.5unit );
         }
     }
 }
 
 .content {
-    border-radius: 4px;
-    margin: -4rem 2rem;
+    border-radius: 6px;
+    margin: -6rem 2rem 0 2rem;
     background: white;
-    padding: 3rem 6rem;
-
-    @media (max-width: 992px) {
-        padding: 2rem 2rem;
-    }
     box-shadow: 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12), 0 8px 10px -5px rgba(0,0,0,.2);
-    margin-bottom: 3rem;
-}
+    margin-bottom: 2rem;
 
-.icon {
-    height: 4rem;
-    width: 4rem;
-
-    &:hover {
-        transform: scale( 1.2 );
-        transition: 0.2s;
+    &__inner {
+        padding: 3rem 4rem;
     }
 }
+
+
+.categories {
+
+    .categories-list {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        li {
+            padding: 2rem;
+            border-radius: 4px;
+            transition: .3s;
+            
+            &:hover {
+                background-color: hsla(0,0%,78%,.2);
+            }
+            
+            &.active {    
+                background:rebeccapurple;
+                box-shadow: 0 5px 20px 0 rgba(0,0,0,.2);            
+                
+                a {
+                    color: white;                
+                }
+            }
+
+            a {
+                text-decoration: none;                
+            }
+
+            + li {
+                margin-left: 1rem;
+            }
+        }
+    }
+}
+
+
+footer {
+    i {
+        font-size: 2.5rem !important;
+        color: #313131;
+
+        &.fa-youtube  {
+            &:hover {
+                color: #c4302b;
+            }
+        }
+
+        &.fa-github {
+            &:hover {
+                color: #6e5494;
+            }
+        }
+
+        &.fa-linkedin-square {
+            &:hover {
+                color: #4875B4;
+            }
+        }
+    }
+
+    & .social-list {
+        display: flex;
+        justify-content: center;
+        margin: 1rem 0 0 0;
+        padding: 0;
+        padding: 1rem;
+
+        li {
+            display: inline-block;
+            + li {
+                    margin-left: 1rem;
+                }
+            }
+        }
+    }
