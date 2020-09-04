@@ -56,7 +56,7 @@
     "@gov.au/link-list": "^3.0.4",
     "@gov.au/responsive-media": "^2.0.13",
     "autoprefixer": "^9.4.6",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "postcss-cli": "^6.1.1"
   },
   "devDependencies": {
